@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-if [ -f $1/package.json ]; then
+BUILD_DIR=$1
+if [ -f $BUILD_DIR/package.json ]; then
   echo "Node.js"
   exit 0
 fi
 
+echo "Did not detect package.json in build dir"
+echo $BUILD_DIR
 exit 1
